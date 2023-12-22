@@ -9,8 +9,8 @@
 
 char	*ft_itoa(int n);
 int     ft_putchar(char c);
-void	ft_putnbr_fd(int n, int fd);
-int     ft_putstr(char *s)
+void     ft_putnbr(int n);
+int     ft_putstr(char *s);
 size_t  ft_strlen(const char *str);
 int		ft_printf(const char *format, ...);
 int     ft_check_format(va_list args, const char *format);

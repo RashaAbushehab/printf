@@ -23,10 +23,10 @@ void print(char *placeholder, ...) {
     va_end(args);
 }
 
-int main() {
-    print("ddfd", 1, 2, 10.5, 3);
-    return 0;
-}
+// int main() {
+//     print("ddfd", 1, 2, 10.5, 3);
+//     return 0;
+// }
 
 
 

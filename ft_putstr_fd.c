@@ -12,20 +12,19 @@
 
 #include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr(char *s)
 {
+	int	len;
+
+	len = ft_strlen(s);
 	if (s)
 	{
-		write(fd, s, ft_strlen(s));
+		write(1, s, len);
 	}
+	else
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	return (len);
 }
-
-// int main(void)
-// {
-//     char *s = "hello"; 
-//     int fd = 1;  
-
-//     ft_putstr_fd(s, fd);
-
-//     return (0);
-// }

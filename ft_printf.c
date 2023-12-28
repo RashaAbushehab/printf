@@ -11,12 +11,11 @@ int	ft_printf(const char *format, ...)
 	int i = 0;
 
 	count = 0;
-	if (!format)
-		return (-1);
 	va_start(args, format);
+	if (!format || (format[0] == '%' && format[1] == '\0')) 
+        	return (-1);
 	while (format[i])
 	{
-
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
 			count += ft_check_format(args, &format[i + 1]);
@@ -33,8 +32,7 @@ int	ft_printf(const char *format, ...)
 
 int main(void)
 {
-    ft_printf("%d\n", 123456);  // Add '\n' here
-    printf("%d\n", 123456);
-    printf("%d\n", 123456);
+    ft_printf("%s\n", "");
+    printf("%s\n", "");
     return 0;
 }

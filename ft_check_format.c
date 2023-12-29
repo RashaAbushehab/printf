@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_format.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabu--sh <rabu--sh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/29 16:29:49 by rabu--sh          #+#    #+#             */
+/*   Updated: 2023/12/29 16:29:49 by rabu--sh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int	ft_check_format(va_list args,  const char *format)
+int	ft_check_format(va_list args, const char *format)
 {
 	int	i;
 
 	i = 0;
-
 	if (format[i] == 'c')
 		return (ft_putchar(va_arg(args, int)));
 	else if (format[i] == 's')
@@ -20,5 +31,4 @@ int	ft_check_format(va_list args,  const char *format)
 		return (ft_puthex(va_arg(args, unsigned int), format));
 	else if (format[i] == '%')
 		return (ft_putchar('%'));
-	return (0);
 }

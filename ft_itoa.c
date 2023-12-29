@@ -13,6 +13,7 @@
 #include "ft_printf.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 static unsigned int	count(int n)
 {
 	unsigned int	digit;

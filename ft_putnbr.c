@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabu--sh <rabu--sh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 15:04:36 by rabu--sh          #+#    #+#             */
-/*   Updated: 2023/11/10 15:04:36 by rabu--sh         ###   ########.fr       */
+/*   Created: 2023/12/29 16:30:29 by rabu--sh          #+#    #+#             */
+/*   Updated: 2023/12/29 16:30:29 by rabu--sh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
-	int len;
-	char *str;
+	int		len;
+	char	*str;
 
 	str = ft_itoa(n);
 	len = ft_putstr(str);

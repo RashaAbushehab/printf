@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabu--sh <rabu--sh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/29 16:30:37 by rabu--sh          #+#    #+#             */
+/*   Updated: 2023/12/29 21:42:00 by rabu--sh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static int ft_printptr(unsigned long long n)
+static int	ft_printptr(unsigned long long n)
 {
-    int count;
-    
-    count = 0;
+	int	count;
+
+	count = 0;
 	if (n >= 16)
 	{
 		count += ft_printptr(n / 16);
@@ -19,7 +31,6 @@ static int ft_printptr(unsigned long long n)
 	}
 	return ((count));
 }
-
 
 int	ft_putptr(unsigned long long n)
 {

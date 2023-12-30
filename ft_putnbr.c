@@ -14,36 +14,43 @@
 
 int	ft_putnbr(int n)
 {
-	int		len;
-	char	*str;
+	int	len;
 
-	str = ft_itoa(n);
-	len = ft_putstr(str);
+	len = 0;
+	if (n == 0)
+		len += ft_putchar('0');
+	if (n == -2147483648)
+	{
+		len += ft_putstr("-2147483648");
+	}
+	if (n < 0)
+	{
+		len += ft_putchar('-');
+		n *= -1;
+	}
+	if (n >= 10)
+	{
+		len += ft_putnbr(n / 10);
+		len += ft_putnbr(n % 10);
+	}
+	else
+		len += ft_putchar(n + '0');
 	return (len);
 }
 
-// void	ft_putnbr(int n)
+// int	ft_putnbr(int n)
 // {
-// 	if (n == 0)
-// 	{
-// 		ft_putchar('0');
-// 		return ;
-// 	}
-// 	if (n == -2147483648)
-// 	{
-// 		ft_putstr("-2147483648");
-// 		return ;
-// 	}
-// 	if (n < 0)
-// 	{
-// 		ft_putchar('-');
-// 		n *= -1;
-// 	}
-// 	if (n >= 10)
-// 	{
-// 		ft_putnbr(n / 10);
-// 		ft_putnbr(n % 10);
-// 	}
-// 	else
-// 		ft_putchar(n + '0');
+// 	int		len;
+// 	char	*str;
+
+// 	str = ft_itoa(n);
+// 	len = ft_putstr(str);
+// 	return (len);
 // }
+
+int main()
+{
+	int n = -1456;
+	int len = ft_putnbr(n);
+	printf("%d\n", len);
+}
